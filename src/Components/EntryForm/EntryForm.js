@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from './../Button/Button'
 
 /*https://tachyons.io/components/cards/text-card/index.html*/
 
-class EntryForm extends Component {
-  render() {
+const EntryForm = ({onInputChange,onSubmitEntry}) => {
+
+
+
+
+
+
+//  render() {
     return (
     	<div>
 	        {/*<input 
@@ -15,18 +21,27 @@ class EntryForm extends Component {
 	        />*/}
 	    	{/*https://codepen.io/austinlyons/pen/ZLEKgN*/}
 
-	        <article class="center mw5 mw6-ns br3 hidden ba b--black-10 mv4">
+	        <article className="center mw5 mw6-ns br3 hidden ba b--black-10 mv4">
 
-			  <h1 class="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">What I feel today is...</h1>
+			  <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">What I feel today is...</h1>
 
-			  <div class="pa3 bt b--black-10">
-			  	<textarea class = "w-100 h4"  /> 
+			  <div className="pa3 bt b--black-10">
+			  	<textarea 
+			  	className = "w-100 h4"  
+			  	onChange = {onInputChange}
+			  	/> 
 			  	
 			  </div>
 
 			  
-				<div class = "fr tr">
-				  		<Button button_name = "Save to journal" />
+				<div 
+				className = "fr tr"
+				onClick = {onSubmitEntry}
+				>
+				  		<Button 
+				  		button_name = "Save to journal" 
+				  		icon = 'chevronRight'
+				  		/>
 				</div>
 
 
@@ -41,7 +56,7 @@ class EntryForm extends Component {
 
         </div>
     );
-  }
+//  }
 }
 
 export default EntryForm;

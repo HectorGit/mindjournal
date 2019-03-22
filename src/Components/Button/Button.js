@@ -9,13 +9,13 @@ class Button extends Component {
 	   
 
 			{/*http://tachyons.io/components/buttons/basic-previous-next/index.html*/}
-			<a href="#0" class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box">
-			    <span class="pr1">{this.props.button_name}</span>
-			    <svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" >
-			       <title>chevronRight icon</title>
+			<a href="#0" className="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box">
+			    <span className="pr1">{this.props.button_name}</span>
+			    <svg className="w1" data-icon={this.props.icon} viewBox="0 0 32 32" >
+			       <title>{this.props.icon} icon</title>
 			       <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
 			    </svg>
-			</a>
+			</a> 
 
 
         </div>

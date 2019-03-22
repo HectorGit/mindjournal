@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class NavigationItem extends Component {
   render() {
     return (
-		<a class="f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="/">{this.props.navigation_item_title}</a>	   
+		<a className="f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="/">{this.props.navigation_item_title}</a>	   
     );
   }
 }

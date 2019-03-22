@@ -6,10 +6,10 @@ class Navigation extends Component {
     return (
     	<div>
 
-        <p class = "tc f4 mw7 center mt4 ">Your Mental Health Journal</p>
+        <p className = "tc f4 mw7 center mt4 ">Your Mental Health Journal</p>
 
 
-        <nav class="bt bb tc mw7 center mt4">
+        <nav className ="bt bb tc mw7 center mt4">
           <NavigationItem navigation_item_title ='Home'/>
           <NavigationItem navigation_item_title = 'Sign in'/>
           <NavigationItem navigation_item_title = 'Register'/>

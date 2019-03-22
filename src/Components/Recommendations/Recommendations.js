@@ -1,35 +1,94 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Recommendation from './Recommendation'
 
-class Recommendations extends Component {
-  render() {
+const Recommendations = ({results}) => {
+
+	const recommendationsArray = results.map((search_result,i)  => {
+
+
+			/*this is here for rendering with dummy data*/
+		if(!results[i].pagemap){
+			return <Recommendation 
+		    key = {i}
+		    title = {results[i].title} 
+		    author = "Firstname Lastname" 
+			img_url = "https://media.threatpost.com/wp-content/uploads/sites/103/2014/02/07023404/shutterstock_146544482.jpg" 
+		    description_tagline = {results[i].snippet}
+			/>
+
+		}
+
+		if(results[i].pagemap.cse_thumbnail){
+			return <Recommendation 
+		    key = {i}
+		    title = {results[i].title} 
+		    author = "Firstname Lastname" 
+			img_url = {results[i].pagemap.cse_thumbnail[0].src}
+		    description_tagline = {results[i].snippet}
+			/>
+
+		}
+
+		return <Recommendation 
+	    key = {i}
+	    title = {results[i].title} 
+	    author = "Firstname Lastname" 
+		img_url = "https://media.threatpost.com/wp-content/uploads/sites/103/2014/02/07023404/shutterstock_146544482.jpg"    
+	    description_tagline = {results[i].snippet}
+		/>
+
+		/*results[i].pagemap.cse_thumbnail[0].src ? 
+			return <Recommendation 
+		    key = {i}
+		    title = {results[i].title} 
+		    author = "Firstname Lastname" 
+			img_url = {results[i].pagemap.cse_thumbnail[0].src}
+		    description_tagline = {results[i].snippet}
+			/>
+		:
+	    	return <Recommendation 
+		    key = {i}
+		    title = {results[i].title} 
+		    author = "Firstname Lastname" 
+			img_url = "https://media.threatpost.com/wp-content/uploads/sites/103/2014/02/07023404/shutterstock_146544482.jpg"    
+		    description_tagline = {results[i].snippet}
+		/>*/
+
+	})
+	
+
     return (
-    	<div class = "pt4">
-    	    <section class="mw7 center avenir">
-    			<h2 class="baskerville fw1 ph3 ph0-l">Suggested Readings</h2>
+    	<div className = "pt4">
+    	    <section className="mw7 center avenir">
+    			<h2 className="baskerville fw1 ph3 ph0-l">Suggested Readings</h2>
     		</section>
 
-		    <Recommendation 
-		    title = "One Awesome Article" 
+    		{recommendationsArray}
+
+    		{/*<Recommendation 
+		    key = {0}
+		    title = {results[0].title} 
 		    author = "Firstname Lastname" 
-		    description_tagline = "This is the description, it can get long" 
-		    img_url = "https://66.media.tumblr.com/ef431d0ff655e00e7321c327d3392d80/tumblr_nonf3eDlxX1shpihko4_500.png" 
-		    />
-		    <Recommendation
-			title = "Another Awesome Article" 
+		    description_tagline = {results[0].snippet}
+		    img_url = {results[0].pagemap.cse_thumbnail[0].src}
+		    img_url = {results[0].cse_thumbnail[0].src}
+
+		    />*/}
+
+		   	{/*<Recommendation 
+		    key = {0}
+		    title = {results[0].title} 
 		    author = "Firstname Lastname" 
-		    description_tagline = "This is the description, it can get long" 
-		    img_url = "https://66.media.tumblr.com/ef431d0ff655e00e7321c327d3392d80/tumblr_nonf3eDlxX1shpihko4_500.png" />
-		    />
-		    <Recommendation
-			title = "Yet Another Awesome Article" 
-		    author = "Firstname Lastname" 
-		    description_tagline = "This is the description, it can get long" 
-		    img_url = "https://66.media.tumblr.com/ef431d0ff655e00e7321c327d3392d80/tumblr_nonf3eDlxX1shpihko4_500.png" />
-		    />
+		    description_tagline = {results[0].snippet}
+		    />*/}
+
+  			{/*img_url = {results[0].pagemap.cse_thumbnail[0].src}*/}
+		    {/*img_url = {results[0].cse_thumbnail[0].src}*/}
+
+
 	    </div>
     );
-  }
-}
+ }
+
 
 export default Recommendations;
